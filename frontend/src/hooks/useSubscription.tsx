@@ -84,7 +84,7 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
 
       // Redirect to Stripe checkout
       const stripe = await import('@stripe/stripe-js').then((module) =>
-        module.loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+        module.loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY!)
       );
 
       if (stripe) {
