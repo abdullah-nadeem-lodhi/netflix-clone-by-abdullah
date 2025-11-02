@@ -5,15 +5,16 @@ import { MagnifyingGlassIcon, BellIcon, UserCircleIcon } from '@heroicons/react/
 
 export default function Header() {
   const { user, logout } = useAuth();
-  const router = useRouter();
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogout = async () => {
     await logout();
-    router.push('/');
+    navigate('/');
   };
 
-  const isTransparent = router.pathname === '/';
+  const isTransparent = location.pathname === '/';
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
