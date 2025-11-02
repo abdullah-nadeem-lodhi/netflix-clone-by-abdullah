@@ -119,13 +119,13 @@ export default function Header() {
             ) : (
               <div className="flex items-center space-x-4">
                 <Link
-                  href="/login"
+                  to="/login"
                   className="text-white hover:text-netflix-light-gray transition-colors"
                 >
                   Sign In
                 </Link>
                 <Link
-                  href="/plans"
+                  to="/plans"
                   className="btn-primary"
                 >
                   Get Started
