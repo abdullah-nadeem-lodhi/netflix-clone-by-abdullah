@@ -33,23 +33,23 @@ export default function Header() {
           {user && (
             <nav className="hidden md:flex items-center space-x-6">
               <Link
-                href="/"
+                to="/"
                 className={`text-white hover:text-netflix-light-gray transition-colors ${
-                  router.pathname === '/' ? 'font-semibold' : ''
+                  location.pathname === '/' ? 'font-semibold' : ''
                 }`}
               >
                 Home
               </Link>
               <Link
-                href="/browse"
+                to="/browse"
                 className={`text-white hover:text-netflix-light-gray transition-colors ${
-                  router.pathname === '/browse' ? 'font-semibold' : ''
+                  location.pathname === '/browse' ? 'font-semibold' : ''
                 }`}
               >
                 Browse
               </Link>
               <Link
-                href="/my-list"
+                to="/my-list"
                 className="text-white hover:text-netflix-light-gray transition-colors"
               >
                 My List
