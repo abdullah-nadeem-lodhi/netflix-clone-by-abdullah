@@ -42,16 +42,14 @@ export default function ContentCard({
   };
 
   return (
-    <Link href={`/watch/${content._id}`}>
+    <Link to={`/watch/${content._id}`}>
       <div className={`content-card ${sizeClasses[size]} relative group cursor-pointer rounded-lg overflow-hidden`}>
         {/* Thumbnail */}
         <div className="relative w-full h-full">
-          <Image
+          <img
             src={content.thumbnailUrl}
             alt={content.title}
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-110"
-            sizes="(max-width: 768px) 128px, (max-width: 1024px) 192px, 256px"
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
           />
         </div>
 
