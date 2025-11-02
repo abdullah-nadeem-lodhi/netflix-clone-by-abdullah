@@ -1,54 +1,31 @@
 import express from 'express';
-import { protect } from '../middleware/auth.js';
+import { protect, requireAdmin } from '../middleware/auth.js';
+import subscriptionController from '../controllers/subscriptionController.js';
 
 const router = express.Router();
 
 // GET /api/subscriptions/plans - Get available subscription plans
-router.get('/plans', (req, res) => {
-  res.json({
-    success: true,
-    message: 'Get subscription plans endpoint - to be implemented'
-  });
-});
+router.get('/plans', subscriptionController.getSubscriptionPlans);
 
 // POST /api/subscriptions/create-checkout-session - Create Stripe checkout session
-router.post('/create-checkout-session', protect, (req, res) => {
-  res.json({
-    success: true,
-    message: 'Create checkout session endpoint - to be implemented'
-  });
-});
+router.post('/create-checkout-session', protect, subscriptionController.createCheckoutSession);
 
 // POST /api/subscriptions/webhook - Stripe webhook handler
-router.post('/webhook', (req, res) => {
-  res.json({
-    success: true,
-    message: 'Stripe webhook endpoint - to be implemented'
-  });
-});
+router.post('/webhook', subscriptionController.handleStripeWebhook);
 
 // GET /api/subscriptions/current - Get user's current subscription
-router.get('/current', protect, (req, res) => {
-  res.json({
-    success: true,
-    message: 'Get current subscription endpoint - to be implemented'
-  });
-});
+router.get('/current', protect, subscriptionController.getCurrentSubscription);
 
 // POST /api/subscriptions/cancel - Cancel subscription
-router.post('/cancel', protect, (req, res) => {
-  res.json({
-    success: true,
-    message: 'Cancel subscription endpoint - to be implemented'
-  });
-});
+router.post('/cancel', protect, subscriptionController.cancelSubscription);
 
 // POST /api/subscriptions/update - Update subscription plan
-router.post('/update', protect, (req, res) => {
-  res.json({
-    success: true,
-    message: 'Update subscription endpoint - to be implemented'
-  });
-});
+router.post('/update', protect, subscriptionController.updateSubscription);
+
+// POST /api/subscriptions/portal - Create customer portal session
+router.post('/portal', protect, subscriptionController.createCustomerPortalSession);
+
+// POST /api/subscriptions/initialize - Initialize subscription plans (admin only)
+router.post('/initialize', protect, requireAdmin, subscriptionController.initializePlans);
 
 export default router;
