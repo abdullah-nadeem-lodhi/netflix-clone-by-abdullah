@@ -84,14 +84,14 @@ export default function Header() {
                   {isMobileMenuOpen && (
                     <div className="absolute right-0 mt-2 w-48 bg-netflix-gray rounded-md shadow-lg py-1">
                       <Link
-                        href="/profile"
+                        to="/profile"
                         className="block px-4 py-2 text-white hover:bg-netflix-black transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Profile
                       </Link>
                       <Link
-                        href="/plans"
+                        to="/plans"
                         className="block px-4 py-2 text-white hover:bg-netflix-black transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -99,7 +99,7 @@ export default function Header() {
                       </Link>
                       {user.role === 'admin' && (
                         <Link
-                          href="/admin"
+                          to="/admin"
                           className="block px-4 py-2 text-white hover:bg-netflix-black transition-colors"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
