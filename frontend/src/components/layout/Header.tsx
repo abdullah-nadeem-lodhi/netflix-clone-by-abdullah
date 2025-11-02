@@ -143,28 +143,28 @@ export default function Header() {
         }`}>
           <div className="container mx-auto px-4 py-4 space-y-2">
             <Link
-              href="/"
+              to="/"
               className="block py-2 text-white hover:text-netflix-light-gray transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link
-              href="/browse"
+              to="/browse"
               className="block py-2 text-white hover:text-netflix-light-gray transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Browse
             </Link>
             <Link
-              href="/my-list"
+              to="/my-list"
               className="block py-2 text-white hover:text-netflix-light-gray transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               My List
             </Link>
             <Link
-              href="/profile"
+              to="/profile"
               className="block py-2 text-white hover:text-netflix-light-gray transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
