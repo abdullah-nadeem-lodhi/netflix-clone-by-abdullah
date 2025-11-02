@@ -1,7 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { PlayIcon, PlusIcon, InformationCircleIcon } from '@heroicons/react/24/solid';
-import { Content } from '@/hooks/useContent';
+import { Content } from '../../hooks/useContent';
 
 interface ContentCardProps {
   content: Content;
